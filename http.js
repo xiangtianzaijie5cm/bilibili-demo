@@ -13,6 +13,8 @@ http.interceptors.request.use((config) => {
   if (localStorage.getItem('id') && localStorage.getItem('token')) {
     config.headers.Authorization = 'Bearer ' + localStorage.getItem('token')
   }
+  // config.headers.secFetchDest = document
+  // config.headers.secFetchMode = 'navigate'
   return config
 }, (error) => {
   return Promise.reject(error)
